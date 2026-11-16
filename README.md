@@ -63,7 +63,9 @@ CSS, JavaScript und Schrift liegen direkt in `website/assets/` und werden vom Ge
 
 ## Veröffentlichen
 
-Der Inhalt von `website/` wird 1:1 auf einen Webspace hochgeladen (z. B. per SFTP). Die `.htaccess` setzt einen Apache-Server voraus. Wix kann kein eigenes HTML ausliefern, deshalb ist ein neuer Hoster nötig. Details, DNS-Umzug und E-Mail-Hinweise: [website-generator/README.md](website-generator/README.md#hosting).
+**Vorschau:** https://lukabpunkt.github.io/wibaperformance/ – wird bei jedem Push auf `main`, der `website/` ändert, automatisch über GitHub Pages aktualisiert ([`.github/workflows/pages.yml`](.github/workflows/pages.yml)). Die Vorschau ist für Suchmaschinen gesperrt (`noindex`), damit sie nicht mit der späteren Domain konkurriert.
+
+**Live-Betrieb:** Der Inhalt von `website/` wird 1:1 auf einen Webspace hochgeladen (z. B. per SFTP). Die `.htaccess` setzt einen Apache-Server voraus. Wix kann kein eigenes HTML ausliefern, deshalb ist ein neuer Hoster nötig. Details, DNS-Umzug und E-Mail-Hinweise: [website-generator/README.md](website-generator/README.md#hosting).
 
 ## Rechte
 

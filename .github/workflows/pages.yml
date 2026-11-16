@@ -1,0 +1,57 @@
+# Veröffentlicht den Ordner website/ als Vorschau auf GitHub Pages
+# (https://<benutzer>.github.io/<repo>/).
+# Die Dateien in website/ sind für die echte Domain gebaut; für die Vorschau
+# wird beim Veröffentlichen zweierlei angepasst:
+#   1. 404.html nutzt Pfade ab "/" – hier wird der Repo-Pfad vorangestellt.
+#   2. Alle Seiten bekommen <meta name="robots" content="noindex">, damit die
+#      Vorschau nicht als Kopie der späteren Domain bei Google landet.
+name: Website auf GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Code holen
+        uses: actions/checkout@v4
+
+      - name: Pages einrichten
+        uses: actions/configure-pages@v5
+
+      - name: Vorschau vorbereiten
+        env:
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          cp -r website _site
+          rm -f _site/.htaccess
+          sed -i -E "s#(href|src)=\"/#\1=\"/${REPO}/#g" _site/404.html
+          find _site -name '*.html' -exec sed -i 's#<meta charset="utf-8">#<meta charset="utf-8">\n<meta name="robots" content="noindex">#' {} +
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+
+      - name: Dateien hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4
