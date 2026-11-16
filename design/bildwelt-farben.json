@@ -1,0 +1,158 @@
+{
+  "hero_werkstatt": [
+    {
+      "hex": "#313643",
+      "anteil": 0.263
+    },
+    {
+      "hex": "#9B9795",
+      "anteil": 0.174
+    },
+    {
+      "hex": "#D0C6B9",
+      "anteil": 0.173
+    },
+    {
+      "hex": "#EFE7DA",
+      "anteil": 0.134
+    },
+    {
+      "hex": "#E0D6C6",
+      "anteil": 0.133
+    },
+    {
+      "hex": "#FCF8F0",
+      "anteil": 0.123
+    }
+  ],
+  "reifenservice": [
+    {
+      "hex": "#151F29",
+      "anteil": 0.246
+    },
+    {
+      "hex": "#BDB7A6",
+      "anteil": 0.177
+    },
+    {
+      "hex": "#8C8C8B",
+      "anteil": 0.175
+    },
+    {
+      "hex": "#706258",
+      "anteil": 0.175
+    },
+    {
+      "hex": "#4C4D4E",
+      "anteil": 0.113
+    },
+    {
+      "hex": "#D4C6AC",
+      "anteil": 0.113
+    }
+  ],
+  "felgen_alufelge": [
+    {
+      "hex": "#AFACA3",
+      "anteil": 0.231
+    },
+    {
+      "hex": "#1B1D1F",
+      "anteil": 0.216
+    },
+    {
+      "hex": "#353636",
+      "anteil": 0.18
+    },
+    {
+      "hex": "#C6C4BD",
+      "anteil": 0.167
+    },
+    {
+      "hex": "#D2D0CA",
+      "anteil": 0.114
+    },
+    {
+      "hex": "#646561",
+      "anteil": 0.092
+    }
+  ],
+  "felgen_galerie_1": [
+    {
+      "hex": "#111619",
+      "anteil": 0.254
+    },
+    {
+      "hex": "#5F5E5B",
+      "anteil": 0.186
+    },
+    {
+      "hex": "#7E8280",
+      "anteil": 0.175
+    },
+    {
+      "hex": "#969F9B",
+      "anteil": 0.153
+    },
+    {
+      "hex": "#8C918E",
+      "anteil": 0.129
+    },
+    {
+      "hex": "#B0B9B4",
+      "anteil": 0.103
+    }
+  ],
+  "klimaservice": [
+    {
+      "hex": "#67615C",
+      "anteil": 0.264
+    },
+    {
+      "hex": "#303535",
+      "anteil": 0.217
+    },
+    {
+      "hex": "#8C8780",
+      "anteil": 0.163
+    },
+    {
+      "hex": "#9FA8AA",
+      "anteil": 0.142
+    },
+    {
+      "hex": "#D3D3CD",
+      "anteil": 0.114
+    },
+    {
+      "hex": "#2289C9",
+      "anteil": 0.1
+    }
+  ],
+  "aufbereitung": [
+    {
+      "hex": "#080706",
+      "anteil": 0.219
+    },
+    {
+      "hex": "#C8BAAB",
+      "anteil": 0.201
+    },
+    {
+      "hex": "#92847A",
+      "anteil": 0.197
+    },
+    {
+      "hex": "#2E2926",
+      "anteil": 0.164
+    },
+    {
+      "hex": "#52453F",
+      "anteil": 0.128
+    },
+    {
+      "hex": "#E1DAD1",
+      "anteil": 0.091
+    }
+  ]
+}

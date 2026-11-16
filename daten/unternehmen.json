@@ -1,0 +1,82 @@
+{
+  "firmenname": "WIBA Performance",
+  "zusatz": "Felgen- und Reifenhandel",
+  "inhaber": "Witali Bakin",
+  "rechtsform": "nicht angegeben (vermutlich Einzelunternehmen) – klären",
+  "adresse": {
+    "strasse": "Hackelbarg 7",
+    "plz": "32369",
+    "ort": "Rahden",
+    "land": "Deutschland"
+  },
+  "telefon": {
+    "mobil": {
+      "anzeige": "0160 4151974",
+      "alt_anzeige": "mobil.: 0160/4151974",
+      "international": "+49 160 4151974",
+      "tel_link": "tel:+491604151974"
+    },
+    "festnetz_laut_datenschutz": {
+      "anzeige": "05776 3060088",
+      "international": "+49 5776 3060088",
+      "tel_link": "tel:+4957763060088"
+    },
+    "fax_laut_kontaktseite": {
+      "anzeige": "05776 9619998",
+      "international": "+49 5776 9619998"
+    },
+    "hinweis": "Festnetznummer steht nur in der Datenschutzerklärung, Fax nur auf der Kontaktseite. Welche Nummern sollen auf die neue Seite?"
+  },
+  "email": {
+    "header_footer": "w.bakin@wibaperformance.de",
+    "kontaktseite_und_datenschutz": "info@wibaperformance.de",
+    "hinweis": "Zwei Adressen im Umlauf – mit Kunden klären, welche öffentlich genannt wird."
+  },
+  "whatsapp": "In AGB/Datenschutz erwähnt (Bestellung per WhatsApp), aber keine Nummer/Link angegeben – vermutlich Mobilnummer.",
+  "social": {
+    "facebook": "https://www.facebook.com/wibaperformance",
+    "instagram": "https://www.instagram.com/wiba_performance/",
+    "tiktok": "https://www.tiktok.com/@wiba_performance"
+  },
+  "oeffnungszeiten": {
+    "mo_fr": "nach Vereinbarung",
+    "sa": "nach Vereinbarung",
+    "so": "geschlossen"
+  },
+  "handelsregister": null,
+  "ust_id": null,
+  "impressum": "Auf der alten Seite NICHT vorhanden (Pflicht nach § 5 DDG). Angaben (Rechtsform, USt-ID, ggf. Steuernummer, Aufsichtsbehörde/Handwerkskammer) beim Kunden erfragen.",
+  "gruendung": {
+    "jahr": null,
+    "hinweis": "Nicht angegeben. Domain seit 08.04.2021 registriert, Footer '©2021' – Gründung vermutlich 2021, beim Kunden bestätigen."
+  },
+  "leistungsbereiche": [
+    "Reifenservice",
+    "Felgenservice (Verkauf und Ankauf)",
+    "Klimaservice",
+    "Fahrzeugaufbereitung",
+    "Ersatzteile & Zubehör"
+  ],
+  "zielgruppe_aus_texten": "Auto-Liebhaber/Tuning-affine Privatkunden (Felgen, Eintragung, RDKS) und Alltagskunden (Reifenwechsel, Klima).",
+  "einsatzgebiet": "Nicht angegeben; Standort Rahden (Kreis Minden-Lübbecke, NRW).",
+  "claims_slogans": [
+    "Willkommen bei WIBA Performance",
+    "Mit uns fahren Sie gut und vor allem sicher!",
+    "Die Klimaanlage kühlt nicht richtig? Wir regeln das!",
+    "Suchen Sie nicht weiter – kommen Sie vorbei und lassen Sie sich von unserer großen Auswahl und unseren unschlagbaren Preisen überraschen.",
+    "Unser Team besteht aus Automobil-Liebhabern mit vielen Jahren an Erfahrung.",
+    "Wir garantieren Ihnen ein faires Angebot, das Ihren Erwartungen entspricht. (Felgenankauf)"
+  ],
+  "seo_alt": {
+    "title": "WIBA Performance Felgen- und Reifenhandel",
+    "description": "WIBA Performance bietet Ihnen den perfekten Reifenservice mit umfangreichen Fachleistungen. Ihr Reifenhandel",
+    "keywords": "Felgenhandel, Kfz-Ersatzteilhandel, Reifenhandel, WIBA Performance",
+    "google_site_verification": "A3A77BAkUNk9xFFSMLg5mnLba8s_QOrg5tclR5cPa9c"
+  },
+  "hosting_alt": {
+    "plattform": "Wix (Domain-DNS bei Wix: ns12/ns13.wixdns.net)",
+    "email": "IONOS (MX mx00/mx01.ionos.de)",
+    "domain_registriert": "2021-04-08 (DENIC)",
+    "hinweis": "Kein SPF-TXT-Eintrag gefunden (Zustellbarkeit E-Mails). Wix kann kein eigenes statisches HTML hosten → neuer Hoster nötig."
+  }
+}

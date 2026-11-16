@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entwurf B: Reifenflanke – WIBA Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,400..900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gummi: #1B1C1E;
+    --profil: #26282B;
+    --flanke: #9A9DA1;
+    --kreide: #F2F0EA;
+    --gelb: #F4C430;
+    --pad: clamp(18px, 5vw, 72px);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--gummi); color: var(--kreide); font: 400 17px/1.6 "Barlow", sans-serif; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--gelb); outline-offset: 3px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--gelb); color: var(--gummi); padding: 10px 14px; z-index: 99; }
+  .skip:focus { left: 8px; }
+  .sw { font-family: "Anybody", sans-serif; font-variation-settings: "wdth" 150; }
+
+  .top { position: fixed; inset: 0 0 auto; z-index: 40; display: flex; align-items: center; justify-content: space-between; padding: 12px var(--pad); background: rgba(27,28,30,.88); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .menu-open .top { backdrop-filter: none; -webkit-backdrop-filter: none; background: var(--gummi); }
+  .top img { width: min(58vw, 240px); height: auto; }
+  .menu-btn { width: 44px; height: 44px; border: 0; background: none; display: grid; place-content: center; gap: 6px; cursor: pointer; }
+  .menu-btn span { width: 26px; height: 2px; background: var(--kreide); transition: transform .3s; }
+  .menu-open .menu-btn span:first-child { transform: translateY(4px) rotate(45deg); }
+  .menu-open .menu-btn span:last-child { transform: translateY(-4px) rotate(-45deg); }
+  .nav { position: fixed; inset: 0; z-index: 39; background: var(--gummi); padding: 96px var(--pad) 32px; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s; }
+  .menu-open .nav { opacity: 1; visibility: visible; }
+  .nav a { text-decoration: none; font: 800 25px/1.2 "Anybody", sans-serif; font-variation-settings: "wdth" 130; padding: 12px 0; border-bottom: 1px solid #3A3C40; }
+
+  /* Hero: Flankenring */
+  .hero { padding: 92px var(--pad) 56px; overflow: hidden; }
+  .reifen { position: relative; width: min(100%, 520px); aspect-ratio: 1; margin: 0 auto; }
+  .reifen .foto { position: absolute; inset: 17%; border-radius: 50%; overflow: hidden; animation: foto 1.4s .3s both; }
+  .reifen .foto img { width: 100%; height: 100%; object-fit: cover; }
+  .ring { position: absolute; inset: 0; animation: roll 2.8s cubic-bezier(.15,.7,.2,1) both; will-change: transform; }
+  .ring svg { width: 100%; height: 100%; }
+  .ring text { font: 800 11.2px "Anybody", sans-serif; font-variation-settings: "wdth" 150; letter-spacing: .06em; fill: #6B6E73; }
+  .ring .gelb { fill: var(--gelb); }
+  @keyframes roll { from { transform: rotate(-200deg); opacity: 0; } 25% { opacity: 1; } to { transform: rotate(0); } }
+  @keyframes foto { from { opacity: 0; transform: scale(.9); } }
+  h1 { margin: 34px 0 0; font: 850 clamp(34px, 9.6vw, 92px)/.98 "Anybody", sans-serif; font-variation-settings: "wdth" 140; letter-spacing: -.01em; animation: up .8s 1.3s both; }
+  .hero p { margin: 16px 0 26px; color: var(--flanke); max-width: 34ch; font-size: 18px; animation: up .8s 1.5s both; }
+  @keyframes up { from { opacity: 0; transform: translateY(14px); } }
+  .btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 17px; }
+  .btn-gelb { background: var(--gelb); color: var(--gummi); }
+  .btn-line { border: 1.5px solid var(--kreide); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 10px; animation: up .8s 1.7s both; }
+
+  section { padding: 80px var(--pad); }
+  h2 { margin: 0 0 18px; font: 800 clamp(28px, 7.4vw, 60px)/1.02 "Anybody", sans-serif; font-variation-settings: "wdth" 135; }
+  .lead { max-width: 38ch; color: var(--flanke); margin: 0 0 30px; }
+
+  .leist a > div { min-width: 0; }
+  @media (max-width: 600px) { .leist b, .nav a, .zeilen b, .sort figcaption { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; } }
+  /* Zoll-Schalter */
+  .zoll { background: var(--profil); overflow: hidden; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; max-width: 520px; }
+  .seg button { min-height: 56px; border: 1.5px solid #4A4D52; background: transparent; color: var(--kreide); border-radius: 6px; font: 800 18px "Anybody", sans-serif; font-variation-settings: "wdth" 130; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--kreide); color: var(--gummi); border-color: var(--kreide); }
+  .preis { position: relative; display: inline-block; margin: 34px 0 6px; font: 850 clamp(56px, 18vw, 120px)/1 "Anybody", sans-serif; font-variation-settings: "wdth" 120; font-variant-numeric: tabular-nums; }
+  .preis svg { position: absolute; inset: -18% -14%; width: 128%; height: 136%; overflow: visible; pointer-events: none; }
+  .preis path { fill: none; stroke: var(--gelb); stroke-width: 3.2; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; filter: url(#kreide); }
+  .preis.is-drawn path { animation: draw .9s cubic-bezier(.3,.6,.3,1) forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .zoll small { display: block; color: var(--flanke); font-size: 15px; }
+
+  /* Preiszeilen */
+  .zeilen { list-style: none; margin: 0; padding: 0; max-width: 720px; }
+  .zeilen li { display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; padding: 16px 0; border-bottom: 1px solid #34363A; }
+  .zeilen b { font-weight: 600; }
+  .zeilen span { grid-column: 1; color: var(--flanke); font-size: 15px; }
+  .zeilen em { grid-column: 2; grid-row: 1 / span 2; align-self: center; font: 800 20px "Anybody", sans-serif; font-variation-settings: "wdth" 120; font-style: normal; color: var(--gelb); white-space: nowrap; text-align: right; }
+
+  /* Sortiment */
+  .sort { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (min-width: 800px) { .sort { grid-template-columns: repeat(3, 1fr); } }
+  .sort figure { margin: 0; position: relative; }
+  .sort img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; }
+  .sort figcaption { padding: 8px 2px 0; font-weight: 600; }
+  .sort figure::after { content: ""; position: absolute; top: 10px; right: 10px; width: 12px; height: 12px; border-radius: 50%; background: var(--gelb); box-shadow: 0 0 0 3px rgba(27,28,30,.5); }
+
+  /* Kunden */
+  .strip { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 calc(var(--pad) * -1); padding: 0 var(--pad) 6px; scrollbar-width: none; }
+  .strip::-webkit-scrollbar { display: none; }
+  .strip img { flex: 0 0 70%; max-width: 340px; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; scroll-snap-align: start; }
+  .stimme { margin: 40px 0 0; max-width: 46ch; border-left: 3px solid var(--gelb); padding-left: 18px; }
+  .stimme p { margin: 0 0 8px; font-size: 20px; line-height: 1.45; }
+  .stimme cite { font-style: normal; color: var(--flanke); }
+
+  .kontakt address { font-style: normal; font-size: 19px; line-height: 1.6; margin-bottom: 26px; }
+  .zeiten { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; }
+  .zeiten dt { color: var(--flanke); } .zeiten dd { margin: 0; }
+  footer { padding: 32px var(--pad) 110px; font-size: 14px; color: var(--flanke); display: flex; flex-wrap: wrap; gap: 8px 22px; border-top: 1px solid #34363A; }
+  footer button { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
+
+  .js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  .fab { position: fixed; right: 16px; bottom: 16px; z-index: 45; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; pointer-events: none; }
+  .fab-toggle { pointer-events: auto; }
+  .fab-toggle { min-height: 54px; padding: 0 22px; border-radius: 6px; border: 0; background: var(--gelb); color: var(--gummi); font: 800 16px "Anybody", sans-serif; font-variation-settings: "wdth" 120; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.4); }
+  .fab-list { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+  .fab-list a { min-height: 46px; display: inline-flex; align-items: center; padding: 0 18px; border-radius: 6px; background: var(--kreide); color: var(--gummi); text-decoration: none; font-weight: 600; opacity: 0; transform: translateY(10px); pointer-events: none; transition: .25s; }
+  .fab.is-open .fab-list a { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top { position: fixed; left: 16px; bottom: 16px; z-index: 44; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--flanke); background: var(--gummi); color: var(--kreide); cursor: pointer; display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .to-top.is-visible { opacity: 1; pointer-events: auto; }
+  .cookie { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; max-width: 520px; background: var(--kreide); color: var(--gummi); border-radius: 8px; padding: 20px; transform: translateY(140%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .cookie.is-open { transform: none; }
+  .cookie p { margin: 0 0 14px; font-size: 15px; line-height: 1.5; }
+  .cookie .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cookie button { min-height: 48px; border-radius: 6px; border: 1.5px solid var(--gummi); background: transparent; font: 600 16px "Barlow", sans-serif; color: var(--gummi); cursor: pointer; }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .preis path { stroke-dashoffset: 0; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="kreide"><feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/></filter></svg>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <a href="#"><img src="img/logo-weiss-transparent.png" alt="WIBA Performance" width="800" height="76"></a>
+  <button class="menu-btn" aria-label="Menü" aria-expanded="false"><span></span><span></span></button>
+</header>
+<nav class="nav" aria-label="Hauptmenü">
+  <a href="#zoll">Reifenservice</a><a href="#sortiment">Felgenservice</a><a href="#preise">Klimaservice</a>
+  <a href="#preise">Fahrzeugaufbereitung</a><a href="#sortiment">Ersatzteile</a><a href="#kunden">Kunden</a><a href="#kontakt">Kontakt</a>
+</nav>
+
+<main id="inhalt">
+  <section class="hero" aria-label="Willkommen">
+    <div class="reifen">
+      <div class="foto"><img src="img/montage.jpg" alt="Reifen wird auf eine Alufelge montiert" fetchpriority="high"></div>
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <defs><path id="kreis" d="M150,150 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs>
+          <circle cx="150" cy="150" r="146" fill="none" stroke="#2E3033" stroke-width="2"/>
+          <circle cx="150" cy="150" r="111" fill="none" stroke="#2E3033" stroke-width="2"/>
+          <text><textPath href="#kreis" textLength="790">WIBA PERFORMANCE · FELGEN- UND REIFENHANDEL · RAHDEN · <tspan class="gelb">R17 R18 R19 R20</tspan> · </textPath></text>
+          <circle cx="150" cy="4" r="4" fill="#F4C430"/>
+        </svg>
+      </div>
+    </div>
+    <h1>Reifen, Felgen, Klima. In Rahden.</h1>
+    <p>Mit uns fahren Sie gut und vor allem sicher. Termine bei WIBA Performance nach Vereinbarung, auch samstags.</p>
+    <div class="ctas"><a class="btn btn-gelb" href="tel:+491604151974">Anrufen: 0160 4151974</a><a class="btn btn-line" href="#zoll">Preise</a></div>
+  </section>
+
+  <section class="zoll" id="zoll">
+    <h2 data-reveal>Reifenmontage</h2>
+    <p class="lead" data-reveal>Wuchten, Montieren und Luftdruck prüfen. Wählen Sie Ihre Felgengröße:</p>
+    <div class="seg" role="group" aria-label="Felgengröße" data-reveal>
+      <button type="button" data-p="12,50" aria-pressed="true">≤ 17″</button>
+      <button type="button" data-p="15,00" aria-pressed="false">18–19″</button>
+      <button type="button" data-p="17,50" aria-pressed="false">≥ 20″</button>
+    </div>
+    <div class="preis" aria-live="polite"><span id="betrag">12,50 €</span>
+      <svg viewBox="0 0 300 140" aria-hidden="true"><path d="M40 92 C 20 40, 140 8, 230 22 C 300 34, 296 102, 210 122 C 130 140, 30 128, 26 84 C 24 60, 60 40, 96 32"/></svg></div>
+    <small>Reifen fast aller Hersteller, auf Wunsch bestellt.</small>
+  </section>
+
+  <section id="preise">
+    <h2 data-reveal>Weitere Preise</h2>
+    <ul class="zeilen" data-reveal>
+      <li><b>Radwechsel Pkw</b><span>Luftdruck und Profiltiefe prüfen</span><em>25,00 €</em></li>
+      <li><b>Radwechsel Transporter</b><span>Luftdruck und Profiltiefe prüfen</span><em>30,00 €</em></li>
+      <li><b>Auswuchten</b><span>Stahlfelge 5,00 € · Alufelge 7,50 €</span><em>ab 5,00 €</em></li>
+      <li><b>RDKS-Sensoren</b><span>4 Sensoren anlernen 15 € · programmieren 25 €</span><em>ab 15,00 €</em></li>
+      <li><b>Altreifenentsorgung</b><span>Pkw und Kleintransporter, pro Reifen</span><em>3,00 €</em></li>
+      <li><b>Klimaanlage befüllen</b><span>R134a, mit Desinfektion 150 €</span><em>120,00 €</em></li>
+      <li><b>Klima-Druckprüfung</b><span>Klimaanlage</span><em>ab 40,00 €</em></li>
+    </ul>
+  </section>
+
+  <section id="sortiment" style="background:var(--profil)">
+    <h2 data-reveal>Bei uns erhältlich</h2>
+    <p class="lead" data-reveal>Felgen verkaufen und ankaufen, mit Hilfe bei Eintragung, Gutachten und RDKS.</p>
+    <div class="sort" data-reveal>
+      <figure><img src="img/s-alufelgen.jpg" alt="Alufelge mit Reifen" loading="lazy"><figcaption>Alufelgen</figcaption></figure>
+      <figure><img src="img/s-reifen.jpg" alt="Gestapelte Neureifen" loading="lazy"><figcaption>Reifen</figcaption></figure>
+      <figure><img src="img/s-rdkssensoren.jpg" alt="RDKS-Sensoren mit Programmiergerät" loading="lazy"><figcaption>RDKS-Sensoren</figcaption></figure>
+      <figure><img src="img/s-radnabenkappen.jpg" alt="Radnabenkappen" loading="lazy"><figcaption>Radnabenkappen</figcaption></figure>
+      <figure><img src="img/s-radschrauben.jpg" alt="Radschrauben" loading="lazy"><figcaption>Radschrauben</figcaption></figure>
+      <figure><img src="img/s-zentrierringe.jpg" alt="Zentrierringe" loading="lazy"><figcaption>Zentrierringe</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="kunden">
+    <h2 data-reveal>Kundenautos</h2>
+    <div class="strip" data-reveal>
+      <img src="img/k-20.jpg" alt="Blauer Mercedes SLC mit Alufelgen" loading="lazy">
+      <img src="img/k-09.jpg" alt="Schwarzer Sportwagen auf Pflaster" loading="lazy">
+      <img src="img/k-12.jpg" alt="Kundenfahrzeug in der Werkstatt" loading="lazy">
+      <img src="img/k-02.jpg" alt="Schwarzer Kombi mit Alufelgen" loading="lazy">
+      <img src="img/k-05.jpg" alt="Schwarze Mercedes E-Klasse" loading="lazy">
+    </div>
+    <blockquote class="stimme" data-reveal><p>„Preise sind fair, Beratung unfassbar gut, immer erreichbar. Einfach eine klare Empfehlung.“</p><cite>Detschle</cite></blockquote>
+    <blockquote class="stimme" data-reveal><p>„Ich hab schon einige Werkstätten ausprobiert und war noch nie so zufrieden wie hier.“</p><cite>Christina Kohlwes</cite></blockquote>
+  </section>
+
+  <section class="kontakt" id="kontakt" style="background:var(--profil)">
+    <h2 data-reveal>Kontakt</h2>
+    <address data-reveal>WIBA Performance · Witali Bakin<br>Hackelbarg 7, 32369 Rahden<br><a href="tel:+491604151974">0160 4151974</a><br><a href="mailto:info@wibaperformance.de">info@wibaperformance.de</a></address>
+    <dl class="zeiten" data-reveal><dt>Mo – Fr</dt><dd>nach Vereinbarung</dd><dt>Sa</dt><dd>nach Vereinbarung</dd><dt>So</dt><dd>geschlossen</dd></dl>
+  </section>
+</main>
+<footer><span>© 2026 WIBA Performance</span><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a><button type="button" onclick="document.getElementById('cookie').classList.add('is-open')">Cookie-Einstellungen</button></footer>
+
+<button class="to-top" id="toTop" aria-label="Nach oben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<div class="fab" id="fab">
+  <div class="fab-list">
+    <a href="tel:+491604151974">Anrufen</a><a href="mailto:info@wibaperformance.de">E-Mail</a>
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hackelbarg+7,+32369+Rahden" target="_blank" rel="noopener">Route</a>
+  </div>
+  <button class="fab-toggle" aria-expanded="false">Kontakt</button>
+</div>
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie-Einstellungen">
+  <p>Wir verwenden nur technisch notwendige Cookies. Externe Inhalte wie Google Maps laden wir erst, wenn Sie zustimmen.</p>
+  <div class="row"><button data-consent="notwendig">Ablehnen</button><button data-consent="alle">Zustimmen</button></div>
+</div>
+<script src="shared.js"></script>
+<script>
+  // Zoll-Schalter mit Kreide-Kringel
+  const preis = document.querySelector('.preis'), betrag = document.getElementById('betrag');
+  const draw = () => { preis.classList.remove('is-drawn'); void preis.offsetWidth; preis.classList.add('is-drawn'); };
+  document.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-pressed', x === b));
+    betrag.textContent = b.dataset.p + ' €'; draw();
+  }));
+  new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { draw(); o.disconnect(); } }, { threshold: .6 }).observe(preis);
+  // Flankenring rollt beim Scrollen weiter
+  const ring = document.querySelector('.ring');
+  if (!WIBA.reduce) {
+    let t = false;
+    ring.addEventListener('animationend', () => {
+      ring.style.animation = 'none';
+      addEventListener('scroll', () => { if (!t) { t = true; requestAnimationFrame(() => { ring.style.transform = `rotate(${scrollY * 0.2}deg)`; t = false; }); } }, { passive: true });
+    });
+  }
+</script>
+</body>
+</html>

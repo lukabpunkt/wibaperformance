@@ -1,0 +1,12 @@
+:root {
+  /* Alte Seite (Bestand) – WIBA Performance */
+  --wiba-logo-schwarz: #06070A;
+  --wiba-text: #04040C;
+  --wiba-bg: #FFFFFF;
+  --wiba-flaeche: #F0F0F0;
+  --wiba-sekundaer: #767676;
+  --wiba-footer: #000000;
+  /* Schriften der alten Seite */
+  --wiba-font-head: "Barlow", sans-serif;      /* Medium 500 für Überschriften, ExtraLight 200 für Lead */
+  --wiba-font-body: "Avenir LT W01 35 Light", "Avenir", sans-serif;  /* Wix-Lizenzschrift, nicht übertragbar */
+}

@@ -1,0 +1,6 @@
+# Für den Website-Generator (website-generator/build.py)
+Pillow>=9
+
+# Zusätzlich nur für das erneute Scrapen der alten Seite (_raw/scripts/)
+requests>=2.25
+beautifulsoup4>=4.9

@@ -1,0 +1,12 @@
+# Textdateien mit LF speichern
+* text=auto eol=lf
+
+# Binärdateien nie verändern
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ico binary
+*.webp binary
+*.gif binary
+*.mp4 binary
+*.woff2 binary

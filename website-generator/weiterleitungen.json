@@ -1,0 +1,46 @@
+[
+  {
+    "alt": "^/produkte/?$",
+    "neu": "/reifenservice/"
+  },
+  {
+    "alt": "^/services/?$",
+    "neu": "/felgenservice/"
+  },
+  {
+    "alt": "^/dienstleistungen-1/?$",
+    "neu": "/klimaservice/"
+  },
+  {
+    "alt": "^/dienstleistungen-2/?$",
+    "neu": "/fahrzeugaufbereitung/"
+  },
+  {
+    "alt": "^/dienstleistungen-3/?$",
+    "neu": "/ersatzteile-zubehoer/"
+  },
+  {
+    "alt": "^/customer-name/?$",
+    "neu": "/kunden/"
+  },
+  {
+    "alt": "^/über-uns/?$",
+    "neu": "/ueber-uns/"
+  },
+  {
+    "alt": "^/%C3%BCber-uns/?$",
+    "neu": "/ueber-uns/"
+  },
+  {
+    "alt": "^/kontakt$",
+    "neu": "/kontakt/"
+  },
+  {
+    "alt": "^/agb$",
+    "neu": "/agb/"
+  },
+  {
+    "alt": "^/gewinnspiel-jetzt-mitmachen/?$",
+    "neu": "/"
+  }
+]

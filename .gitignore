@@ -1,0 +1,29 @@
+# System und Editoren
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Claude Code: nur launch.json teilen, lokale Einstellungen nicht
+.claude/*
+!.claude/launch.json
+
+# Node (Playwright für die Tests)
+node_modules/
+package-lock.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Testausgaben
+test-ergebnisse/
+
+# Rohdaten der alten Wix-Seite: groß (~180 MB) und jederzeit neu ladbar
+# (node _raw/scripts/render-crawl.js . && python3 -I _raw/scripts/extract.py .)
+_raw/assets/
+_raw/html/
+_raw/html-rendered/
+_raw/css/

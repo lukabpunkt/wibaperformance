@@ -1,0 +1,189 @@
+{
+  "reifenservice": {
+    "alte_url": "https://www.wibaperformance.de/produkte",
+    "seitentitel_alt": "Reifen- und Felgenservice | WIBA Performance",
+    "headerbild": "bilder/seiten-header/reifenservice.jpg",
+    "intro": "Wir bieten Ihnen eine riesige Auswahl passender Reifen. Mit uns fahren Sie gut und vor allem sicher! Wir führen Reifen fast aller Hersteller. Natürlich bestellen wir auch gerne das gewünschte Modell für Sie, falls wir etwas nicht auf Lager haben sollten. Kommen Sie zu uns und lassen Sie sich beraten. Wir sind Spezialisten und wissen über sämtliche Neuigkeiten Bescheid. Sowohl bei den Produkten als auch bei den gesetzlichen Bestimmungen.",
+    "preise": [
+      {
+        "titel": "Reifenmontage",
+        "beschreibung": "inkl. Wuchten, Montieren und Luftdruck prüfen",
+        "bild": "bilder/reifenservice/01-reifenmontage.jpg",
+        "positionen": [
+          [
+            "bis 17 Zoll",
+            "12,50 €"
+          ],
+          [
+            "18 und 19 Zoll",
+            "15,00 €"
+          ],
+          [
+            "ab 20 Zoll",
+            "17,50 €"
+          ]
+        ]
+      },
+      {
+        "titel": "Radwechsel",
+        "beschreibung": "Rad wechseln, Luftdruck und Profiltiefe prüfen",
+        "bild": "bilder/reifenservice/02-radwechsel.jpg",
+        "positionen": [
+          [
+            "Pkw",
+            "25,00 €"
+          ],
+          [
+            "Transporter",
+            "30,00 €"
+          ]
+        ]
+      },
+      {
+        "titel": "Auswuchten",
+        "beschreibung": "Rad auswuchten inkl. Auswuchtgewichte",
+        "bild": "bilder/reifenservice/03-auswuchten.jpg",
+        "positionen": [
+          [
+            "Stahlfelge",
+            "5,00 €"
+          ],
+          [
+            "Alufelge",
+            "7,50 €"
+          ]
+        ],
+        "hinweis": "Vermutlich Preis pro Rad – klären"
+      },
+      {
+        "titel": "RDKS-Sensoren",
+        "beschreibung": "Reifendruck-Kontrollsystem",
+        "bild": "bilder/felgenservice/sortiment/05-rdkssensoren.jpg",
+        "positionen": [
+          [
+            "4 RDKS-Sensoren anlernen",
+            "15,00 €"
+          ],
+          [
+            "4 RDKS-Sensoren programmieren",
+            "25,00 €"
+          ]
+        ]
+      },
+      {
+        "titel": "Altreifenentsorgung",
+        "beschreibung": "Pkw und Kleintransporter",
+        "bild": "bilder/reifenservice/05-altreifenentsorgung.jpg",
+        "positionen": [
+          [
+            "pro Reifen",
+            "3,00 €"
+          ]
+        ]
+      }
+    ],
+    "hinweis": "Preise Stand Abruf 13.11.2026, ob inkl. MwSt. nicht angegeben – klären. Reifenmontage-Preis vermutlich pro Rad."
+  },
+  "felgenservice": {
+    "alte_url": "https://www.wibaperformance.de/services",
+    "video": "bilder/video/felgen-rdks-480p.mp4",
+    "video_poster": "bilder/video/felgen-rdks-poster.jpg",
+    "felgenverkauf": "Der Kauf von Alufelgen ist oftmals nicht so einfach wie man denkt. Dass bei der Wahl der richtigen Alufelge aber viel Erfahrung gefragt ist, wissen die Wenigsten. Die große Auswahl an Alufelgen macht es fast unmöglich, ohne Fachwissen und Konfigurator die richtige Wahl zu treffen. Ob die Felge überhaupt an Ihrem Fahrzeug angebracht werden kann, hängt von verschiedenen Faktoren ab. Wir helfen Ihnen dabei! Rund um die Eintragungen in den Fahrzeugschein, den RDKS-Sensoren oder bei der Durchsicht relevanter Gutachten. Wir bieten Ihnen eine riesige Auswahl passender Reifen und Alufelgen. Es gibt endlose Kombinationsmöglichkeiten. Wir besprechen mit Ihnen gerne die Details und suchen im letzten Schritt auch noch den passenden Reifen und ggf. die richtigen RDSK - Sensoren zu Ihren neuen Felgen aus.",
+    "felgenankauf": "Unsere Augen sind stets auf der Suche nach authentischen und hochwertigen Alufelgen/Kompletträdern. Wenn Sie im Besitz eines solchen Radsatzes sind und diesen verkaufen möchten, können Sie uns gerne über unser Kontaktformular anschreiben. Wir garantieren Ihnen ein faires Angebot, das Ihren Erwartungen entspricht.",
+    "sortiment_titel": "bei uns erhältlich",
+    "sortiment": [
+      {
+        "titel": "Alufelgen",
+        "bild": "bilder/felgenservice/sortiment/01-alufelgen.jpg"
+      },
+      {
+        "titel": "Radnabenkappen",
+        "bild": "bilder/felgenservice/sortiment/02-radnabenkappen.jpg"
+      },
+      {
+        "titel": "Zentrierringe",
+        "bild": "bilder/felgenservice/sortiment/03-zentrierringe.png"
+      },
+      {
+        "titel": "Radschrauben",
+        "bild": "bilder/felgenservice/sortiment/04-radschrauben.jpg"
+      },
+      {
+        "titel": "RDKS-Sensoren",
+        "bild": "bilder/felgenservice/sortiment/05-rdkssensoren.jpg"
+      },
+      {
+        "titel": "Reifen",
+        "bild": "bilder/felgenservice/sortiment/06-reifen.jpg"
+      }
+    ],
+    "galerie": [
+      "bilder/felgenservice/galerie/01-kompletträder.jpg",
+      "bilder/felgenservice/galerie/02-kompletträder.jpg",
+      "bilder/felgenservice/galerie/03-kompletträder.jpg",
+      "bilder/felgenservice/galerie/04-kompletträder.jpg",
+      "bilder/felgenservice/galerie/05-kompletträder.jpg",
+      "bilder/felgenservice/galerie/06-kompletträder.jpg",
+      "bilder/felgenservice/galerie/07-kompletträder.jpg",
+      "bilder/felgenservice/galerie/08-kompletträder.jpg",
+      "bilder/felgenservice/galerie/09-kompletträder.jpg"
+    ]
+  },
+  "klimaservice": {
+    "alte_url": "https://www.wibaperformance.de/dienstleistungen-1",
+    "headerbild": "bilder/seiten-header/klimaservice.jpg",
+    "claim": "Die Klimaanlage kühlt nicht richtig? Wir regeln das!",
+    "text": "Im Sommer und Winter frische und saubere Luft mit dem Auto Klimaservice bei WIBA Performance. Eine Klimaanlage ist nicht wartungsfrei. Sie verliert pro Jahr 15% Kältemittel, dessen Verlust ausgeglichen werden muss, um die volle Funktionsfähigkeit der Klimaanlage zu gewährleisten. Desinfektion schützt vor Bakterien und Schimmelbefall.",
+    "preise": [
+      [
+        "Klimaanlage befüllen (R134a)",
+        "120,00 €"
+      ],
+      [
+        "Klimaanlage befüllen und desinfizieren (R134a)",
+        "150,00 €"
+      ],
+      [
+        "Druckprüfung",
+        "ab 40,00 €"
+      ]
+    ],
+    "hinweis": "Nur Kältemittel R134a genannt. Neuere Fahrzeuge (ab ca. 2017) nutzen R1234yf – fragen, ob das auch angeboten wird. '15 % Kältemittelverlust pro Jahr' ist eine Herstelleraussage, die üblich zitiert wird (oft 10–15 %)."
+  },
+  "fahrzeugaufbereitung": {
+    "alte_url": "https://www.wibaperformance.de/dienstleistungen-2",
+    "headerbild": "bilder/seiten-header/fahrzeugaufbereitung.jpg",
+    "text": "Durch die Aufbereitung erstrahlt Ihr Fahrzeug nicht nur wieder in voller Schönheit, sondern erhält auch seinen Wert bzw. steigert ihn sogar noch. Regelmäßige Pflege verhindert Rostschäden und sorgt dafür, dass Dichtungen und andere Verschleißteile länger einsatzbereit sind. Ein gepflegtes Fahrzeug sieht nicht nur besser aus, sondern hat auch eine deutlich höhere Lebensdauer.",
+    "galerie": [
+      "bilder/fahrzeugaufbereitung/01-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/02-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/03-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/04-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/05-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/06-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/07-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/08-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/09-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/10-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/11-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/12-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/13-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/14-aufbereitung.jpg",
+      "bilder/fahrzeugaufbereitung/15-aufbereitung.jpg"
+    ],
+    "hinweis": "Keine Preise oder Pakete angegeben. Fünf Bilder sind Vorher-Nachher-Collagen."
+  },
+  "ersatzteile_zubehoer": {
+    "alte_url": "https://www.wibaperformance.de/dienstleistungen-3",
+    "headerbild": "bilder/seiten-header/ersatzteile-zubehoer.jpg",
+    "text": "Wir verkaufen Autoteile höchster Qualität. Kompetente Verkaufsberater helfen Ihnen gerne individuell bei der Produktauswahl aus unseren Herstellersortiment. Für jeden ist das passende Produkt dabei. Spezielle Wünsche nehmen wir natürlich immer gerne entgegen.",
+    "produkte": [
+      {
+        "titel": "BMW Nabenkappen",
+        "preis": "20,00 €",
+        "bild": "bilder/ersatzteile/bmw-nabenkappen.jpg",
+        "hinweis": "Einziges Produkt; Menge (Satz à 4?) unklar"
+      }
+    ]
+  }
+}

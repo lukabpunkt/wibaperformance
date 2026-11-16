@@ -1,0 +1,19 @@
+{
+  "name": "WIBA Performance",
+  "short_name": "WIBA",
+  "icons": [
+    {
+      "src": "/assets/logo/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#F4F4F1",
+  "background_color": "#F4F4F1",
+  "display": "browser"
+}

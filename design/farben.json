@@ -1,0 +1,40 @@
+{
+  "logo": {
+    "schwarz": "#06070A",
+    "hinweis": "Logo ist einfarbig schwarz (Pixelanalyse: #060708). Keine Markenfarbe vorhanden."
+  },
+  "alte_seite_tatsaechlich_verwendet": [
+    {
+      "hex": "#000000",
+      "rolle": "Footer-Fläche, Cookie-Button"
+    },
+    {
+      "hex": "#04040C",
+      "rolle": "Text/Überschriften (Wix color_37)"
+    },
+    {
+      "hex": "#FFFFFF",
+      "rolle": "Hintergrund"
+    },
+    {
+      "hex": "#F0F0F0",
+      "rolle": "Kartenköpfe 'bei uns erhältlich', Footer-Unterleiste"
+    },
+    {
+      "hex": "#767676",
+      "rolle": "Sekundärtext (color_44)"
+    }
+  ],
+  "wix_vorlagen_palette_ungenutzt": {
+    "hex": [
+      "#AABCBF",
+      "#E1EFF2",
+      "#A2A2E0",
+      "#4646C1",
+      "#232369",
+      "#4793A3"
+    ],
+    "hinweis": "Standardpalette der Wix-Vorlage (Lila/Petrol), auf der Seite praktisch nicht sichtbar."
+  },
+  "bildwelt_dominant": "Werkstatt-Weiß/Grau, Reifenschwarz, Felgen-Anthrazit und gebürstetes Silber; Akzente: Werkzeug-Blau (Montiermaschine, Klimagerät, ca. #2289C9), Rot der RDKS-Verpackungen."
+}

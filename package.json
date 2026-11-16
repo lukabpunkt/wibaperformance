@@ -1,0 +1,17 @@
+{
+  "name": "wibaperformance-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Neue statische Website für WIBA Performance (Rahden): Generator, Website, Entwürfe und Tests",
+  "scripts": {
+    "build": "python3 -I website-generator/build.py",
+    "serve": "python3 -m http.server 8090 --directory website",
+    "serve:entwurf": "python3 -m http.server 8082 --directory entwurf",
+    "test": "node website-generator/tests/interact.js && node website-generator/tests/small.js",
+    "test:shots": "node website-generator/tests/shots.js test-ergebnisse",
+    "scrape": "node _raw/scripts/render-crawl.js . && python3 -I _raw/scripts/extract.py . && python3 -I _raw/scripts/build.py ."
+  },
+  "devDependencies": {
+    "playwright-core": "^1.48.0"
+  }
+}

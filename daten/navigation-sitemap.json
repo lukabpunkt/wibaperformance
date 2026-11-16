@@ -1,0 +1,135 @@
+{
+  "hauptnavigation": [
+    {
+      "label": "Start",
+      "alte_url": "https://www.wibaperformance.de/"
+    },
+    {
+      "label": "Reifenservice",
+      "alte_url": "https://www.wibaperformance.de/produkte"
+    },
+    {
+      "label": "Felgenservice",
+      "alte_url": "https://www.wibaperformance.de/services"
+    },
+    {
+      "label": "Klimaservice",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-1"
+    },
+    {
+      "label": "Fahrzeugaufbereitung",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-2"
+    },
+    {
+      "label": "Ersatzteile & Zubehör",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-3"
+    },
+    {
+      "label": "Unsere Kunden und Bewertungen",
+      "alte_url": "https://www.wibaperformance.de/customer-name"
+    },
+    {
+      "label": "Über uns",
+      "alte_url": "https://www.wibaperformance.de/%C3%BCber-uns"
+    },
+    {
+      "label": "Kontakt",
+      "alte_url": "https://www.wibaperformance.de/kontakt"
+    },
+    {
+      "label": "AGB & Datenschutz",
+      "alte_url": "https://www.wibaperformance.de/agb",
+      "ort": "Footer"
+    },
+    {
+      "label": "Gewinnspiel",
+      "alte_url": "https://www.wibaperformance.de/gewinnspiel-jetzt-mitmachen",
+      "ort": "nur über Sitemap/Direktlink"
+    }
+  ],
+  "alle_seiten": [
+    {
+      "datei": "inhalte/seiten/01-startseite.md",
+      "alte_url": "https://www.wibaperformance.de/",
+      "seitentitel": "WIBA Performance Felgen- und Reifenhandel",
+      "meta_description": "WIBA Performance bietet Ihnen den perfekten Reifenservice mit umfangreichen Fachleistungen. Ihr Reifenhandel",
+      "h1": "H1: Willkommen bei WIBA Performance"
+    },
+    {
+      "datei": "inhalte/seiten/02-reifenservice.md",
+      "alte_url": "https://www.wibaperformance.de/produkte",
+      "seitentitel": "Reifen- und Felgenservice | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Reifenservice"
+    },
+    {
+      "datei": "inhalte/seiten/03-felgenservice.md",
+      "alte_url": "https://www.wibaperformance.de/services",
+      "seitentitel": "Felgenservice | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Felgenservice"
+    },
+    {
+      "datei": "inhalte/seiten/04-klimaservice.md",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-1",
+      "seitentitel": "Klimaservice | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Klimaservice"
+    },
+    {
+      "datei": "inhalte/seiten/05-fahrzeugaufbereitung.md",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-2",
+      "seitentitel": "Fahrzeugaufbereitung | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Fahrzeugaufbereitung"
+    },
+    {
+      "datei": "inhalte/seiten/06-ersatzteile-zubehoer.md",
+      "alte_url": "https://www.wibaperformance.de/dienstleistungen-3",
+      "seitentitel": "Ersatzteile & Zubehör | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: KFZ Ersatzteile & Zubehör"
+    },
+    {
+      "datei": "inhalte/seiten/07-kunden-bewertungen.md",
+      "alte_url": "https://www.wibaperformance.de/customer-name",
+      "seitentitel": "Unsere Kunden | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Unsere Kunden"
+    },
+    {
+      "datei": "inhalte/seiten/08-ueber-uns.md",
+      "alte_url": "https://www.wibaperformance.de/%C3%BCber-uns",
+      "seitentitel": "Über uns | WIBA Performance",
+      "meta_description": "Felgenhandel, Reifenhandel, Kfz-Ersatzteilhandel",
+      "h1": "H1: Über uns"
+    },
+    {
+      "datei": "inhalte/seiten/09-kontakt.md",
+      "alte_url": "https://www.wibaperformance.de/kontakt",
+      "seitentitel": "Kontakt | WIBA Performance",
+      "meta_description": "Felgenhandel, Reifenhandel, Kfz-Ersatzteilhandel",
+      "h1": "H1: Kontakt"
+    },
+    {
+      "datei": "inhalte/seiten/10-agb-datenschutz.md",
+      "alte_url": "https://www.wibaperformance.de/agb",
+      "seitentitel": "Datenschutz | WIBA Performance",
+      "meta_description": "WIBA Performance bietet Ihnen den perfekten Reifenservice mit umfangreichen Fachleistungen. Ihr Reifenhandel",
+      "h1": "H1: Datenschutzerklärung"
+    },
+    {
+      "datei": "inhalte/seiten/11-gewinnspiel.md",
+      "alte_url": "https://www.wibaperformance.de/gewinnspiel-jetzt-mitmachen",
+      "seitentitel": "Gewinnspiel | WIBA Performance",
+      "meta_description": null,
+      "h1": "H1: Jetzt beim Gewinnspiel mitmachen!"
+    }
+  ],
+  "externe_links": [
+    "https://www.facebook.com/wibaperformance",
+    "https://www.instagram.com/wiba_performance/",
+    "https://www.tiktok.com/@wiba_performance"
+  ],
+  "hinweis": "Wix-Slugs sind nichtssagend (/services = Felgenservice, /produkte = Reifenservice, /dienstleistungen-1..3, /customer-name). Alle per 301 auf sprechende URLs umleiten."
+}

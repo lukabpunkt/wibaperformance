@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WIBA Performance – Designrichtungen</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1C1F23; --grau: #5A6066; --linie: #DADDE0; --bg: #F4F5F6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Barlow", sans-serif; }
+  main { max-width: 1340px; margin: 0 auto; padding: 40px 16px 80px; }
+  header img { width: 220px; height: auto; margin-bottom: 18px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; margin: 0 0 10px; }
+  .intro { max-width: 72ch; color: var(--grau); margin: 0 0 14px; }
+  .gemeinsam { max-width: 72ch; padding: 14px 18px; border-left: 3px solid var(--ink); background: #fff; margin: 0 0 44px; }
+  .grid { display: grid; gap: 44px 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 390px), 1fr)); }
+  .opt h2 { margin: 0; font-size: 26px; }
+  .opt .sub { margin: 2px 0 14px; color: var(--grau); }
+  .phone { width: 410px; max-width: 100%; height: 800px; border: 10px solid var(--ink); border-radius: 42px; overflow: hidden; background: #fff; }
+  .phone.scroll { overflow-y: auto; }
+  .phone.scroll img { width: 100%; height: auto; }
+  .phone iframe { width: 390px; max-width: 100%; height: 100%; border: 0; display: block; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 12px; }
+  .chips span { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; padding: 3px 10px 3px 4px; border: 1px solid var(--linie); border-radius: 99px; background: #fff; }
+  .chips i { width: 16px; height: 16px; border-radius: 50%; display: inline-block; border: 1px solid rgba(0,0,0,.15); }
+  dl { margin: 0; display: grid; grid-template-columns: 92px 1fr; gap: 8px 12px; font-size: 15px; }
+  dt { color: var(--grau); } dd { margin: 0; }
+  .open { display: inline-block; margin-top: 14px; font-weight: 700; }
+  .empf { margin-top: 18px; padding: 10px 14px; background: var(--ink); color: #fff; border-radius: 6px; font-size: 15px; }
+  .runde { font-size: clamp(24px, 3.4vw, 34px); margin: 72px 0 6px; padding-top: 28px; border-top: 2px solid var(--ink); }
+  .alt { margin-top: 72px; display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 390px), 1fr)); align-items: start; }
+  .alt ul { margin: 0; padding-left: 20px; } .alt li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <header><img src="img/logo-schwarz-transparent.png" alt="WIBA Performance" width="800" height="76"></header>
+  <h1>Designrichtungen für die neue Website</h1>
+  <p class="intro">Jeder Entwurf ist eine echte, scrollbare Startseite in Handygröße, mit Originalfotos, -texten und -preisen von WIBA Performance. Im Rahmen kann man scrollen, tippen und das Menü öffnen. Die Unterseiten folgen nach der Wahl.</p>
+  <div class="gemeinsam"><b>In allen Entwürfen enthalten:</b> eine Einstiegsanimation als Erkennungsmerkmal, dezentes Einblenden beim Scrollen, Scroll-up-Button, DSGVO-Cookie-Banner mit gleichwertigem „Ablehnen“, Kontakt per Anrufen, E-Mail und Route, Sprunglink „Zum Inhalt“. Alles respektiert die Einstellung „Bewegung reduzieren“. Telefonlinks wählen die vollständige Nummer +49 160 4151974 (auf der alten Seite fehlt dort die Vorwahl).</div>
+
+  <h2 class="runde">Runde 2: hochwertiger, mit mehr Bewegung</h2>
+  <p class="intro">Drei neue Richtungen mit Premium-Anspruch. Jede hat einen großen Einstiegsmoment und mehrere scrollgesteuerte Effekte. Am besten ganzseitig auf dem Handy oder im schmalen Fenster ansehen und langsam scrollen.</p>
+  <div class="grid">
+    <article class="opt">
+      <h2>D: Startknopf</h2>
+      <p class="sub">Dunkles Cockpit, Ambientelicht</p>
+      <div class="phone"><iframe src="d-startknopf.html" title="Entwurf D: Startknopf"></iframe></div>
+      <div class="chips"><span><i style="background:#0E1014"></i>#0E1014 Nacht</span><span><i style="background:#171A20"></i>#171A20 Cockpit</span><span><i style="background:#C9CDD2"></i>#C9CDD2 Silber</span><span><i style="background:#7CC8FF"></i>#7CC8FF Eisblau</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Michroma, die breite Schrift von Bordcomputern und Instrumenten, dazu Manrope für Text.</dd>
+        <dt>Wow</dt><dd>Motorstart: Die Drehzahlnadel schwingt hoch und fällt auf Leerlauf, dann öffnet sich aus dem Instrument kreisrund das Foto der E-Klasse in der WIBA-Halle.</dd>
+        <dt>Bewegung</dt><dd>Leistungen als feste Bühne: Beim Scrollen wechseln die Vollbildfotos, Glaskarten gleiten darüber. Preise zählen hoch wie Anzeigen. Kundenautos laufen als Doppelband. Die Scroll-Position zeigt ein kleiner Tacho im Kopf.</dd>
+        <dt>Wirkung</dt><dd>Technisch, exklusiv, „Performance“ wörtlich genommen.</dd>
+      </dl>
+      <a class="open" href="d-startknopf.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+
+    <article class="opt">
+      <h2>E: Galerie</h2>
+      <p class="sub">Hell, kuratiert, wie ein Designstudio</p>
+      <div class="phone"><iframe src="e-galerie.html" title="Entwurf E: Galerie"></iframe></div>
+      <div class="chips"><span><i style="background:#F4F4F1"></i>#F4F4F1 Kalk</span><span><i style="background:#DCDDD9"></i>#DCDDD9 Linie</span><span><i style="background:#1F3C8C"></i>#1F3C8C Lackblau</span><span><i style="background:#15181D"></i>#15181D Tinte</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Hanken Grotesk, sehr groß und eng gesetzt. Typografie als Bildträger.</dd>
+        <dt>Wow</dt><dd>Riesiges „WIBA“, gefüllt mit einer Felge. Beim Scrollen fliegt man durch das „I“ hindurch ins Vollbild, dann erscheint der Claim.</dd>
+        <dt>Bewegung</dt><dd>Text füllt sich Wort für Wort, die Felgengalerie läuft horizontal beim vertikalen Scrollen, Kundenfotos in Spalten mit Parallaxe, Menü als Vorhang. Am Desktop eigener Cursor („Ansehen“).</dd>
+        <dt>Wirkung</dt><dd>Hochwertig wie ein Felgenhersteller-Katalog, viel Ruhe, die Fotos wirken größer.</dd>
+      </dl>
+      <a class="open" href="e-galerie.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+
+    <article class="opt">
+      <h2>F: Lackglanz</h2>
+      <p class="sub">Elegant, glänzend, Showroom bei Nacht</p>
+      <div class="phone"><iframe src="f-lackglanz.html" title="Entwurf F: Lackglanz"></iframe></div>
+      <div class="chips"><span><i style="background:#0F1012"></i>#0F1012 Klarlack</span><span><i style="background:#F2F3F1"></i>#F2F3F1 Perlweiß</span><span><i style="background:#C2AC82"></i>#C2AC82 Champagner</span><span><i style="background:#62676E"></i>#62676E Rauch</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Bodoni Moda kursiv für Überschriften, Jost für Text. Klassisch-luxuriös wie Autowerbung.</dd>
+        <dt>Wow</dt><dd>Die Überschrift wird „auspoliert“: von matt und unscharf zu gestochen scharf, während ein Lichtbalken über den Lack gleitet. Am Desktop folgt das Licht der Maus.</dd>
+        <dt>Bewegung</dt><dd>Vorher-Nachher-Regler mit echten Aufbereitungsfotos, der sich beim ersten Sehen selbst vorführt. Karten neigen sich mit Glanzlicht, Champagner-Linien ziehen sich auf.</dd>
+        <dt>Wirkung</dt><dd>Am edelsten, rückt Aufbereitung und Pflege nach vorn.</dd>
+      </dl>
+      <a class="open" href="f-lackglanz.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+  </div>
+
+  <h2 class="runde">Runde 1</h2>
+  <div class="grid">
+    <article class="opt">
+      <h2>A: Felgenstern</h2>
+      <p class="sub">Hell, präzise, wie ein Showroom</p>
+      <div class="phone"><iframe src="a-felgenstern.html" title="Entwurf A: Felgenstern"></iframe></div>
+      <div class="chips"><span><i style="background:#EDEFF0"></i>#EDEFF0 Alu</span><span><i style="background:#AEB4BA"></i>#AEB4BA Diamantschliff</span><span><i style="background:#3B4047"></i>#3B4047 Gunmetal</span><span><i style="background:#1C1F23"></i>#1C1F23 Anthrazit</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Saira, breit und kursiv gesetzt, nimmt die schräge, gestreckte Logo-Schrift auf.</dd>
+        <dt>Signatur</dt><dd>Eine gezeichnete Mehrspeichen-Felge rollt beim Laden aus und dreht sich beim Scrollen weiter. Über die Überschrift läuft eine Lichtkante wie über eine glanzgedrehte Felge.</dd>
+        <dt>Wirkung</dt><dd>Edel und ruhig, ganz in Felgen-Metallic. Die Fotos stehen im Vordergrund, Preise auf dunkler Fläche.</dd>
+        <dt>Kontakt</dt><dd>Runder Anthrazit-Button rechts unten, klappt Anrufen, E-Mail und Route auf.</dd>
+      </dl>
+      <a class="open" href="a-felgenstern.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+
+    <article class="opt">
+      <h2>B: Reifenflanke</h2>
+      <p class="sub">Dunkel, kräftig, Tuning-Szene</p>
+      <div class="phone"><iframe src="b-reifenflanke.html" title="Entwurf B: Reifenflanke"></iframe></div>
+      <div class="chips"><span><i style="background:#1B1C1E"></i>#1B1C1E Gummi</span><span><i style="background:#26282B"></i>#26282B Profil</span><span><i style="background:#9A9DA1"></i>#9A9DA1 Flanke</span><span><i style="background:#F2F0EA"></i>#F2F0EA Kreide</span><span><i style="background:#F4C430"></i>#F4C430 Reifenkreide</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Anybody in extra-breitem Schnitt, wie die Prägung auf der Reifenflanke. Barlow, die bisherige Hausschrift, für Fließtext.</dd>
+        <dt>Signatur</dt><dd>Um das Montagefoto läuft ein Flankenring mit „R17 R18 R19 R20“ und rollt beim Laden an. Der Zoll-Schalter zeigt den Montagepreis, ein gelber Kreidekringel wie vom Reifenmonteur markiert ihn.</dd>
+        <dt>Wirkung</dt><dd>Laut und selbstbewusst. Spricht Felgen- und Autofans an, die Instagram und TikTok von WIBA kennen.</dd>
+        <dt>Kontakt</dt><dd>Gelbe Taste „Kontakt“ rechts unten.</dd>
+      </dl>
+      <a class="open" href="b-reifenflanke.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+
+    <article class="opt">
+      <h2>C: Auftragszettel</h2>
+      <p class="sub">Hell, direkt, Werkstatt zum Anfassen</p>
+      <div class="phone"><iframe src="c-auftragszettel.html" title="Entwurf C: Auftragszettel"></iframe></div>
+      <div class="chips"><span><i style="background:#F6F6F3"></i>#F6F6F3 Werkstattwand</span><span><i style="background:#D5D7D8"></i>#D5D7D8 Beton</span><span><i style="background:#1769AA"></i>#1769AA Maschinenblau</span><span><i style="background:#2289C9"></i>#2289C9 Blau hell</span><span><i style="background:#24282C"></i>#24282C Graphit</span></div>
+      <dl>
+        <dt>Schrift</dt><dd>Barlow Condensed für Überschriften, Barlow für Text. Barlow ist von Verkehrsschildern abgeleitet und schon die Hausschrift der alten Seite.</dd>
+        <dt>Signatur</dt><dd>Ein Auftragszettel „druckt“ aus dem Schlitz. Leistung und Größe antippen, der Zettel zeigt den echten Preis und schickt mit einem Tipp eine fertig formulierte Anfrage per E-Mail.</dd>
+        <dt>Wirkung</dt><dd>Ehrlich und nützlich: Preise sofort sichtbar, Anfrage ohne Tippen. Hero mit Mitarbeiter im WIBA-Shirt vor dem Wandlogo.</dd>
+        <dt>Kontakt</dt><dd>Feste Leiste unten (Anrufen, Anfrage, Route), erscheint nach dem ersten Bildschirm. Google-Karte erst nach Klick.</dd>
+      </dl>
+      <a class="open" href="c-auftragszettel.html" target="_blank">Ganzseitig öffnen</a>
+    </article>
+  </div>
+
+  <section class="alt">
+    <div>
+      <h2>Zum Vergleich: die alte Seite</h2>
+      <div class="phone scroll"><img src="img/alt-mobil-startseite.png" alt="Alte Startseite auf dem Handy (Screenshot, Wix-Mobilansicht 320 px)" width="390"></div>
+      <p class="sub" style="margin-top:10px">Echter Screenshot der Mobilansicht (iPhone-Profil). <a href="https://www.wibaperformance.de/" target="_blank" rel="noopener">Live ansehen</a></p>
+    </div>
+    <div>
+      <h2>Was die alte Seite mobil falsch macht</h2>
+      <ul>
+        <li>Der Telefon-Link wählt nur „4151974“, ohne Vorwahl.</li>
+        <li>Es gibt kein Impressum, und die Datenschutzerklärung enthält den Platzhalter „[E-Mail-Adresse]“.</li>
+        <li>Der Cookie-Banner hat kein „Ablehnen“.</li>
+        <li>Die Mobilansicht ist fest auf 320 px eingestellt, der Footer-Link „AGB & Daten…“ wird abgeschnitten.</li>
+        <li>Die Startseite enthält nur Begrüßung und Öffnungszeiten, keine Leistungen und keine Preise.</li>
+        <li>Das Gewinnspiel ist seit März abgelaufen und steht noch online.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>

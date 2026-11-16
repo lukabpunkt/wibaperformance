@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entwurf C: Auftragszettel – WIBA Performance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wand: #F6F6F3;
+    --papier: #FFFFFF;
+    --beton: #D5D7D8;
+    --graphit: #24282C;
+    --grau: #5A6066;
+    --blau: #1769AA;
+    --blau-hell: #2289C9;
+    --pad: clamp(18px, 5vw, 72px);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--wand); color: var(--graphit); font: 400 17px/1.6 "Barlow", sans-serif; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--blau); outline-offset: 3px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--blau); color: #fff; padding: 10px 14px; z-index: 99; }
+  .skip:focus { left: 8px; }
+  .cond { font-family: "Barlow Condensed", sans-serif; }
+
+  .top { position: fixed; inset: 0 0 auto; z-index: 40; display: flex; align-items: center; justify-content: space-between; padding: 10px var(--pad); background: var(--wand); border-bottom: 1px solid var(--beton); }
+  .top img { width: min(56vw, 230px); height: auto; }
+  .menu-btn { min-height: 44px; padding: 0 14px; border: 1.5px solid var(--graphit); border-radius: 4px; background: none; font: 700 17px "Barlow Condensed", sans-serif; cursor: pointer; color: var(--graphit); }
+  .nav { position: fixed; inset: 0; z-index: 39; background: var(--wand); padding: 90px var(--pad) 32px; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+  .menu-open .nav { opacity: 1; visibility: visible; }
+  .nav a { text-decoration: none; font: 700 32px/1.15 "Barlow Condensed", sans-serif; padding: 10px 0; border-bottom: 1px solid var(--beton); }
+
+  /* Hero */
+  .hero { padding-top: 66px; }
+  .hero-bild { position: relative; height: 34svh; min-height: 220px; overflow: hidden; }
+  .hero-bild img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+  .hero-text { padding: 26px var(--pad) 0; }
+  h1 { margin: 0; font: 700 clamp(40px, 11.5vw, 96px)/.95 "Barlow Condensed", sans-serif; letter-spacing: -.005em; max-width: 14ch; }
+  .hero-text p { margin: 14px 0 0; color: var(--grau); max-width: 36ch; }
+
+  /* Signatur: Auftragszettel */
+  .drucker { margin: 34px var(--pad) 0; max-width: 560px; }
+  .schlitz { height: 22px; border-radius: 6px 6px 3px 3px; background: var(--graphit); position: relative; }
+  .schlitz::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 5px; height: 3px; border-radius: 2px; background: #000; }
+  .zettel-clip { overflow: hidden; margin: -6px 10px 0; }
+  .zettel { background: var(--papier); padding: 22px 20px 20px; box-shadow: 0 10px 28px rgba(36,40,44,.12); position: relative;
+            --zack: radial-gradient(circle at 8px 100%, transparent 6px, var(--papier) 6.5px); }
+  .zettel::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: var(--zack); background-size: 16px 10px; }
+  .zettel-clip { padding-bottom: 12px; }
+  .js .drucker:not(.los) .zettel { transform: translateY(-101%); }
+  .drucker.los .zettel:not(.fertig) { animation: druck 1.5s .15s cubic-bezier(.3,.8,.3,1) both; }
+  @keyframes druck { from { transform: translateY(-101%); } }
+  .zettel.neu { animation: nach .45s cubic-bezier(.3,.8,.3,1); }
+  @keyframes nach { from { transform: translateY(-14px); } }
+  .zettel h2 { margin: 0 0 14px; font: 700 26px/1 "Barlow Condensed", sans-serif; display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .zettel h2 span { font: 500 14px "Barlow", sans-serif; color: var(--grau); }
+  .gruppe { border: 0; margin: 0 0 14px; padding: 0; }
+  .gruppe legend { font-weight: 600; font-size: 15px; margin-bottom: 8px; padding: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips label { position: relative; }
+  .chips input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .chips span { display: inline-flex; align-items: center; min-height: 40px; padding: 0 13px; border: 1.5px solid var(--beton); border-radius: 4px; font-size: 15px; font-weight: 500; background: var(--papier); }
+  .chips input:checked + span { background: var(--blau); border-color: var(--blau); color: #fff; }
+  .chips input:focus-visible + span { outline: 2px solid var(--blau); outline-offset: 2px; }
+  .summe { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; border-top: 2px dashed var(--beton); padding-top: 14px; margin-top: 4px; }
+  .summe b { font: 700 19px/1.2 "Barlow Condensed", sans-serif; }
+  .summe small { display: block; color: var(--grau); font-size: 14px; }
+  .summe output { font: 700 34px/1 "Barlow Condensed", sans-serif; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .zettel .aktionen { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .btn { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; padding: 0 16px; border-radius: 4px; text-decoration: none; font: 700 18px "Barlow Condensed", sans-serif; text-align: center; }
+  .btn-blau { background: var(--blau); color: #fff; }
+  .btn-line { border: 1.5px solid var(--graphit); }
+
+  section { padding: 78px var(--pad); }
+  h2.t { margin: 0 0 16px; font: 700 clamp(34px, 9vw, 64px)/1 "Barlow Condensed", sans-serif; }
+  .lead { color: var(--grau); max-width: 40ch; margin: 0 0 28px; }
+
+  /* Leistungen: Fotokacheln, erste breit */
+  .kacheln { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .kacheln a { position: relative; display: block; text-decoration: none; color: #fff; border-radius: 4px; overflow: hidden; aspect-ratio: 1; }
+  .kacheln a:first-child { grid-column: span 2; aspect-ratio: 16/10; }
+  .kacheln img { width: 100%; height: 100%; object-fit: cover; }
+  .kacheln a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,22,25,.82), rgba(20,22,25,0) 58%); }
+  .kacheln span { position: absolute; left: 12px; right: 12px; bottom: 10px; z-index: 1; font: 700 21px/1.05 "Barlow Condensed", sans-serif; }
+  @media (min-width: 800px) { .kacheln { grid-template-columns: repeat(3, 1fr); } .kacheln a:first-child { grid-row: span 2; grid-column: span 1; aspect-ratio: auto; } }
+
+  .felgen { background: var(--papier); }
+  .felgen .zwei { display: grid; gap: 24px; }
+  .felgen h3 { margin: 0 0 6px; font: 700 24px "Barlow Condensed", sans-serif; }
+  .felgen p { margin: 0; }
+  @media (min-width: 800px) { .felgen .zwei { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+  .kunden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 36px; }
+  .kunden-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .stimmen { display: grid; gap: 14px; }
+  @media (min-width: 800px) { .stimmen { grid-template-columns: repeat(3, 1fr); } }
+  .stimmen blockquote { margin: 0; background: var(--papier); border-left: 4px solid var(--blau-hell); padding: 18px; }
+  .stimmen p { margin: 0 0 8px; }
+  .stimmen cite { font-style: normal; font-weight: 600; color: var(--grau); }
+
+  .kontakt address { font-style: normal; font-size: 19px; margin-bottom: 18px; }
+  .zeiten { margin: 0 0 26px; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; }
+  .zeiten dt { color: var(--grau); } .zeiten dd { margin: 0; }
+  .karte { aspect-ratio: 4/3; max-width: 640px; background: repeating-linear-gradient(45deg, #ECEDEA 0 14px, #E4E6E3 14px 28px); border: 1px solid var(--beton); display: grid; place-content: center; text-align: center; gap: 10px; padding: 20px; border-radius: 4px; }
+  .karte p { margin: 0; color: var(--grau); font-size: 15px; max-width: 30ch; }
+  .karte button { justify-self: center; min-height: 48px; padding: 0 20px; border: 1.5px solid var(--graphit); background: var(--papier); border-radius: 4px; font: 700 18px "Barlow Condensed", sans-serif; cursor: pointer; color: var(--graphit); }
+  footer { padding: 30px var(--pad) 120px; font-size: 14px; color: var(--grau); display: flex; flex-wrap: wrap; gap: 8px 22px; border-top: 1px solid var(--beton); }
+  footer button { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
+
+  .js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+
+  /* Kontaktleiste unten (erscheint nach dem Hero) */
+  .leiste { position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--graphit); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); gap: 6px; transform: translateY(110%); transition: transform .35s; }
+  .leiste.is-visible { transform: none; }
+  .leiste a { min-height: 48px; display: grid; place-items: center; color: #fff; text-decoration: none; font: 700 18px "Barlow Condensed", sans-serif; border-radius: 4px; }
+  .leiste a:first-child { background: var(--blau); }
+  .to-top { position: fixed; right: 14px; bottom: 82px; z-index: 44; width: 46px; height: 46px; border-radius: 4px; border: 1.5px solid var(--graphit); background: var(--wand); cursor: pointer; display: grid; place-items: center; opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .to-top.is-visible { opacity: 1; pointer-events: auto; }
+  .cookie { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; max-width: 520px; background: var(--papier); border: 1.5px solid var(--graphit); border-radius: 4px; padding: 18px; transform: translateY(150%); transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .cookie.is-open { transform: none; }
+  .cookie p { margin: 0 0 14px; font-size: 15px; line-height: 1.5; }
+  .cookie .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cookie button { min-height: 48px; border-radius: 4px; border: 1.5px solid var(--graphit); background: var(--papier); font: 700 18px "Barlow Condensed", sans-serif; color: var(--graphit); cursor: pointer; }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="top">
+  <a href="#"><img src="img/logo-schwarz-transparent.png" alt="WIBA Performance" width="800" height="76"></a>
+  <button class="menu-btn" aria-expanded="false">Menü</button>
+</header>
+<nav class="nav" aria-label="Hauptmenü">
+  <a href="#auftrag">Preise &amp; Anfrage</a><a href="#leistungen">Leistungen</a><a href="#felgen">Felgenservice</a><a href="#kunden">Kunden</a><a href="#kontakt">Kontakt</a>
+</nav>
+
+<main id="inhalt">
+  <section class="hero" style="padding:66px 0 0" aria-label="Willkommen">
+    <div class="hero-bild"><img src="img/polieren.jpg" alt="Mitarbeiter von WIBA Performance poliert ein Auto vor dem Wandlogo" fetchpriority="high"></div>
+    <div class="hero-text">
+      <h1>Reifen, Felgen, Klima und Pflege in Rahden</h1>
+      <p>Termine nach Vereinbarung, auch samstags. Stellen Sie Ihren Auftrag zusammen und sehen Sie direkt den Preis.</p>
+    </div>
+    <div class="drucker" id="auftrag">
+      <div class="schlitz" aria-hidden="true"></div>
+      <div class="zettel-clip">
+        <form class="zettel" id="zettel" aria-label="Auftrag zusammenstellen">
+          <h2>Ihr Auftrag <span>WIBA Performance</span></h2>
+          <fieldset class="gruppe"><legend>Leistung</legend><div class="chips" id="leistung"></div></fieldset>
+          <fieldset class="gruppe"><legend id="opt-titel">Größe</legend><div class="chips" id="option"></div></fieldset>
+          <div class="summe"><div><b id="z-titel">Reifenmontage</b><small id="z-info">inkl. Wuchten, Montieren, Luftdruck</small></div><output id="z-preis">12,50 €</output></div>
+          <div class="aktionen"><a class="btn btn-blau" id="z-mail" href="#">Anfrage senden</a><a class="btn btn-line" href="tel:+491604151974">Anrufen</a></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <h2 class="t" data-reveal>Leistungen</h2>
+    <div class="kacheln" data-reveal>
+      <a href="#auftrag"><img src="img/montage.jpg" alt="" loading="lazy"><span>Reifenservice</span></a>
+      <a href="#felgen"><img src="img/s-alufelgen.jpg" alt="" loading="lazy"><span>Felgenservice</span></a>
+      <a href="#auftrag"><img src="img/klima.jpg" alt="" loading="lazy"><span>Klimaservice</span></a>
+      <a href="#kontakt"><img src="img/a-12.jpg" alt="" loading="lazy"><span>Fahrzeug&shy;aufbereitung</span></a>
+      <a href="#kontakt"><img src="img/teile.jpg" alt="" loading="lazy"><span>Ersatzteile &amp; Zubehör</span></a>
+    </div>
+  </section>
+
+  <section class="felgen" id="felgen">
+    <h2 class="t" data-reveal>Felgen kaufen und verkaufen</h2>
+    <p class="lead" data-reveal>Ob eine Felge an Ihr Fahrzeug passt, hängt von vielen Faktoren ab. Wir helfen bei Eintragung, Gutachten und RDKS-Sensoren.</p>
+    <div class="zwei" data-reveal>
+      <div><h3>Felgenverkauf</h3><p>Große Auswahl an Alufelgen und passenden Reifen. Wir besprechen die Details mit Ihnen und suchen am Ende auch die richtigen RDKS-Sensoren aus.</p></div>
+      <div><h3>Felgenankauf</h3><p>Sie möchten hochwertige Alufelgen oder Kompletträder verkaufen? Schreiben Sie uns, wir machen Ihnen ein faires Angebot.</p></div>
+    </div>
+  </section>
+
+  <section id="kunden">
+    <h2 class="t" data-reveal>Kunden und Bewertungen</h2>
+    <div class="kunden-grid" data-reveal>
+      <img src="img/k-20.jpg" alt="Kundenfahrzeug" loading="lazy"><img src="img/k-09.jpg" alt="Kundenfahrzeug" loading="lazy"><img src="img/k-13.jpg" alt="Kundenfahrzeug" loading="lazy">
+      <img src="img/k-05.jpg" alt="Kundenfahrzeug" loading="lazy"><img src="img/k-02.jpg" alt="Kundenfahrzeug" loading="lazy"><img src="img/k-17.jpg" alt="Kundenfahrzeug" loading="lazy">
+    </div>
+    <div class="stimmen" data-reveal>
+      <blockquote><p>„Super Beratung, schnell ein Angebot bekommen, das preislich auch sofort passte, und superschnelle Fertigstellung.“</p><cite>D. Kindermann</cite></blockquote>
+      <blockquote><p>„Top. Geduldig und freundlich. Kann ich nur weiterempfehlen!“</p><cite>D. Lewen</cite></blockquote>
+      <blockquote><p>„Korrekte und ordentliche Arbeit! Alles top.“</p><cite>Manfred Bodemann</cite></blockquote>
+    </div>
+  </section>
+
+  <section class="kontakt" id="kontakt" style="background:var(--papier)">
+    <h2 class="t" data-reveal>So finden Sie uns</h2>
+    <address data-reveal>WIBA Performance, Witali Bakin<br>Hackelbarg 7, 32369 Rahden<br><a href="tel:+491604151974">0160 4151974</a> · <a href="mailto:info@wibaperformance.de">info@wibaperformance.de</a></address>
+    <dl class="zeiten" data-reveal><dt>Mo – Fr</dt><dd>nach Vereinbarung</dd><dt>Sa</dt><dd>nach Vereinbarung</dd><dt>So</dt><dd>geschlossen</dd></dl>
+    <div class="karte" id="karte" data-reveal><p>Die Karte kommt von Google Maps. Dabei werden Daten an Google übertragen.</p><button type="button" id="karte-laden">Karte laden</button></div>
+  </section>
+</main>
+<footer><span>© 2026 WIBA Performance</span><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a><button type="button" onclick="document.getElementById('cookie').classList.add('is-open')">Cookie-Einstellungen</button></footer>
+
+<button class="to-top" id="toTop" aria-label="Nach oben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<nav class="leiste" id="leiste" aria-label="Schnellkontakt">
+  <a href="tel:+491604151974">Anrufen</a><a href="#auftrag">Anfrage</a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Hackelbarg+7,+32369+Rahden" target="_blank" rel="noopener">Route</a>
+</nav>
+<div class="cookie" id="cookie" role="dialog" aria-label="Cookie-Einstellungen">
+  <p>Wir verwenden nur technisch notwendige Cookies. Google Maps laden wir erst, wenn Sie zustimmen.</p>
+  <div class="row"><button data-consent="notwendig">Ablehnen</button><button data-consent="alle">Zustimmen</button></div>
+</div>
+<script src="shared.js"></script>
+<script>
+  // Auftragszettel: Preise aus der alten Seite (Stand 13.11.2026)
+  const L = {
+    'Reifenmontage': { titel: 'Größe', info: 'inkl. Wuchten, Montieren, Luftdruck', o: [['bis 17″', '12,50 €'], ['18–19″', '15,00 €'], ['ab 20″', '17,50 €']] },
+    'Radwechsel': { titel: 'Fahrzeug', info: 'Luftdruck und Profiltiefe prüfen', o: [['Pkw', '25,00 €'], ['Transporter', '30,00 €']] },
+    'Auswuchten': { titel: 'Felge', info: 'inkl. Auswuchtgewichte', o: [['Stahlfelge', '5,00 €'], ['Alufelge', '7,50 €']] },
+    'RDKS': { titel: '4 Sensoren', info: 'Reifendruck-Kontrollsystem', o: [['anlernen', '15,00 €'], ['programmieren', '25,00 €']] },
+    'Klimaservice': { titel: 'Umfang', info: 'Kältemittel R134a', o: [['Befüllen', '120,00 €'], ['+ Desinfektion', '150,00 €'], ['Druckprüfung', 'ab 40,00 €']] },
+    'Aufbereitung': { titel: 'Umfang', info: 'Innen und außen, nach Absprache', o: [['Auf Anfrage', 'Anfrage']] },
+    'Felgen': { titel: 'Anliegen', info: 'Mit Eintragung und RDKS', o: [['kaufen', 'Anfrage'], ['verkaufen', 'Anfrage']] },
+  };
+  const $ = id => document.getElementById(id);
+  const chip = (name, val, checked) => `<label><input type="radio" name="${name}" value="${val}"${checked ? ' checked' : ''}><span>${val}</span></label>`;
+  $('leistung').innerHTML = Object.keys(L).map((k, i) => chip('leistung', k, i === 0)).join('');
+  const render = () => {
+    const l = document.querySelector('[name=leistung]:checked').value, d = L[l];
+    const sel = document.querySelector('[name=option]:checked');
+    const cur = sel && d.o.find(o => o[0] === sel.value) ? sel.value : d.o[0][0];
+    $('opt-titel').textContent = d.titel;
+    $('option').innerHTML = d.o.map(o => chip('option', o[0], o[0] === cur)).join('');
+    const o = d.o.find(x => x[0] === cur);
+    $('z-titel').textContent = l + ' · ' + o[0]; $('z-info').textContent = d.info; $('z-preis').textContent = o[1];
+    const body = `Hallo WIBA Performance,\n\nich interessiere mich für: ${l} (${o[0]}), ${o[1]}.\nFahrzeug: \nWunschtermin: \n\nViele Grüße`;
+    $('z-mail').href = 'mailto:info@wibaperformance.de?subject=' + encodeURIComponent('Anfrage: ' + l) + '&body=' + encodeURIComponent(body);
+  };
+  $('zettel').addEventListener('change', () => { render(); const z = $('zettel'); z.classList.remove('neu'); void z.offsetWidth; z.classList.add('neu'); });
+  $('zettel').addEventListener('animationend', e => { if (e.animationName === 'druck') e.target.classList.add('fertig'); });
+  render();
+  const dr = document.querySelector('.drucker');
+  if (WIBA.reduce || !('IntersectionObserver' in window)) { dr.classList.add('los'); $('zettel').classList.add('fertig'); }
+  else new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { dr.classList.add('los'); o.disconnect(); } }, { threshold: .25 }).observe(dr);
+
+  // Kontaktleiste nach dem Hero
+  const leiste = $('leiste');
+  const onS = () => leiste.classList.toggle('is-visible', scrollY > innerHeight * .9);
+  addEventListener('scroll', onS, { passive: true }); onS();
+
+  // Karte erst nach Klick laden
+  $('karte-laden').addEventListener('click', () => {
+    $('karte').outerHTML = '<iframe title="Karte: Hackelbarg 7, Rahden" style="width:100%;max-width:640px;aspect-ratio:4/3;border:0;border-radius:4px" loading="lazy" src="https://www.google.com/maps?q=Hackelbarg+7,+32369+Rahden&output=embed"></iframe>';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "hero_bild": "bilder/hero/werkstatt-wiba-wandlogo.jpg",
+  "headline": "Willkommen bei WIBA Performance",
+  "text": "WIBA Performance steht dafür, seinen Kunden die beste Auswahl an Felgen, Reifen und Kfz - Ersatzteilen anzubieten, sowie mit dem besten Kundenservice für Sie da zu sein. Unser Team arbeitet eng mit den Kunden zusammen, um die passenden Teile zum passenden Preis für Sie zu finden. Wir informieren Sie über unsere Produkte, sodass Sie nur das kaufen werden, was Sie auch wirklich brauchen. Kontaktieren Sie uns, um mehr zu erfahren.",
+  "oeffnungszeiten": {
+    "mo_fr": "nach Vereinbarung",
+    "sa": "nach Vereinbarung",
+    "so": "geschlossen"
+  },
+  "hinweis": "Alte Startseite hat eine große leere Fläche zwischen Text und Öffnungszeiten (Desktop)."
+}

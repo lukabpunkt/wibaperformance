@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "entwurf", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8082", "--directory", "entwurf"], "port": 8082 },
+    { "name": "website", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "8090", "--directory", "website"], "port": 8090 }
+  ]
+}
